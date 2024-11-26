@@ -50,12 +50,18 @@ header .manage-icon {
   align-items: center;
 }
 header .manage-icon .box {
-  width: 31px;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-left: 25px;
   transition: 0.3s;
+}
+header .manage-icon .box:hover {
+  background-color: #6e6e6e;
 }
 header .manage-icon .box i {
   cursor: pointer;
@@ -63,11 +69,6 @@ header .manage-icon .box i {
   color: #d0d5da;
   position: relative;
   transition: 0.3s;
-}
-header .manage-icon i:hover {
-  border: 10px solid #6e6e6e;
-  border-radius: 50%;
-  color: #fff;
 }
 header .manage-icon .notif {
   position: absolute;
@@ -85,10 +86,19 @@ header .manage-icon .notif {
   border: 2px solid #fff;
 }
 .navigation {
-  width: 270px;
+  /* width: 270px; */
   /* min-height: calc(100vh - 79px); */
-  background-color: var(--main-color);
+  background-color: red;
+  z-index: 2;
   display: flex;
+}
+.navigation .container-manage {
+  width: 270px;
+  max-height: calc(100vh - 79px);
+}
+.navigation .container-manage .holder {
+  background-color: var(--main-color);
+  padding: 5px 0;
 }
 .navigation .user-box {
   width: 240px;
@@ -209,8 +219,12 @@ header .manage-icon .notif {
   color: #1ca1c1;
 }
 /* start section */
-section .container {
+.notifications {
   width: 350px;
+  max-height: calc(100vh - 79px);
+}
+section .container {
+  /* width: 350px; */
   max-height: calc(100vh - 79px);
   overflow-y: hidden;
   transition: 0.3s;
@@ -241,12 +255,17 @@ section .head-section .right .caret i {
 section .head-section .reload {
   color: #777;
   cursor: pointer;
-  width: 16px;
-  position: relative;
-}
-section .head-section .reload:hover i {
-  border: 10px solid #ccc;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+section .head-section .reload:hover {
+  background-color: #ccc;
 }
 section .container .body-post {
   padding: 10px 15px;
@@ -301,12 +320,16 @@ section .container .body-post .info i {
 
 /* end section */
 /* strat body */
+.body-sec {
+  flex: 1;
+  background-color: #fff;
+  max-height: calc(100vh - 79px);
+}
 .body-sec .container {
   display: flex;
   justify-content: space-between;
   /* align-items: center; */
-  padding: 15px;
-  width: 963px;
+  padding: 15px 15px 0;
   border-bottom: 1px solid #ccc;
 }
 .body-sec .box-right-header {
@@ -362,5 +385,111 @@ section .container .body-post .info i {
 }
 .body-sec .box-left i {
   padding-left: 25px;
+}
+.body-sec .body-middle {
+  height: 230px;
+  padding: 25px 70px 0;
+  overflow-y: hidden;
+  transition: 0.3s;
+  border-bottom: 1px solid #ccc;
+}
+.body-sec .body-middle:hover {
+  overflow-y: scroll;
+}
+.body-sec .body-middle .img {
+  margin-bottom: 30px;
+}
+.body-sec .body-middle .img img {
+  max-width: 100%;
+}
+.body-sec .body-middle h2 {
+  text-align: center;
+  color: #475466;
+}
+.body-sec .body-middle p {
+  line-height: 1.8;
+  color: #777;
+  margin-bottom: 15px;
+}
+.body-sec .body-foot {
+  padding: 25px 20px 25px 70px;
+}
+.body-sec .body-foot i {
+  color: #777;
+  padding-left: 15px;
+  cursor: pointer;
+}
+.body-sec .body-foot .details {
+  display: flex;
+  padding: 10px;
+}
+.body-sec .body-foot .details .details-left {
+  color: #777;
+  padding-right: 15px;
+}
+.body-sec .body-foot .details .details-right {
+  max-width: 500px;
+}
+.body-sec .body-foot .details .details-right .holder span {
+  color: #555;
+}
+.body-sec .body-foot .details .details-right .holder span.bold {
+  font-weight: bold;
+}
+.body-sec .body-foot .typing-sec .box {
+  display: flex;
+}
+.body-sec .body-foot .typing-sec .box .image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: red;
+  margin-right: 10px;
+}
+.body-sec .body-foot .typing-sec .box .image img {
+  max-width: 100%;
+}
+.body-sec .body-foot .typing-sec .box .input {
+  flex: 1;
+}
+.body-sec .body-foot .typing-sec .box .input textarea {
+  width: 100%;
+  height: 70px;
+  padding: 5px;
+  resize: none;
+  outline: none;
+}
+.body-sec .body-foot .typing-sec .box .input textarea:hover {
+  outline: 1px solid #1387a2;
+}
+.body-sec .body-foot .typing-sec .controls {
+  padding: 10px;
+}
+.body-sec .body-foot .typing-sec .controls .controls-holder {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.body-sec .body-foot .typing-sec .controls .controls-holder .attach {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+}
+.body-sec .body-foot .typing-sec .controls .controls-holder .attach:hover {
+  background-color: rgb(28 161 193 / 41%);
+}
+.body-sec .body-foot .typing-sec .controls .controls-holder .btn {
+  background-color: #1ca1c1;
+  color: #fff;
+  padding: 7px 15px;
+  cursor: pointer;
+  margin-left: 15px;
+  transition: 0.3s;
+}
+.body-sec .body-foot .typing-sec .controls .controls-holder .btn:hover {
+  background-color: #1e829a;
 }
 /* end body */
